@@ -22,7 +22,9 @@ import Recommendation from "./Recommendation";
 //autre possibilite appeler le composant children, cela
 //permet d appeler le composant sans forcement savoir ce que contient le dom children
 function Banner({ children }) {
-    return <div className='lmj-banner'>{children}</div>
+    return <div className='lmj-banner'>{children}
+        <Recommendation />
+    </div>
 }
 
 export default Banner

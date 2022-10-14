@@ -6,7 +6,7 @@ function CareScale({scaleValue, careType}) {
         2: 'peu',
         3: 'modérément',
         4: 'beaucoup',
-        5: 'beaucoup...'
+        5: 'vraiment beaucoup...'
     }
     return (
         <div

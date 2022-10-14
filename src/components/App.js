@@ -4,22 +4,11 @@ import Cart from './Cart'
 import ShoppingList from "./Shoppinglist";
 import Footer from "./Footer";
 import logo from '../assets/logo.png'
+import {useState} from 'react'
 
 function App() {
-    // return (
-    //     <div>
-    //         <Banner>
-    //             <img src={logo} alt='La maisonjungle' className='lmj-logo' />
-    //             <h1 className='lmj-title'>La maison jungle</h1>
-    //         </Banner>
-    //         <QuestionForm />
-    //         <Cart/>
-    //         <ShoppingList />
-    //         <Cat />
-    //         <Footer />
-    //     </div>
-    // );
 
+    const [cart,updateCart] = useState([])
     return (
         <div>
             <Banner>
@@ -27,8 +16,8 @@ function App() {
                 <h1 className='lmj-title'>La maison jungle</h1>
             </Banner>
             <div className='lmj-layout-inner'>
-                <Cart/>
-                <ShoppingList/>
+                <Cart cart={cart} updateCart={updateCart} />
+                <ShoppingList cart={cart} updateCart={updateCart}  />
             </div>
             <Footer/>
         </div>

@@ -5,10 +5,11 @@ function handleClick(e) {
     console.log('✨ Ceci est mon event :', e)
 }
 
-function PlantItem({ id, cover, name, water, light }) {
+function PlantItem({ id, cover, name, water, light ,price}) {
     return (
 
         <li  className='lmj-plant-item' onClick={() => handleClick(name)} >
+            <span className='lmj-plant-item-price'>{price}€</span>
             <img className='lmj-plant-item-cover' src={cover} alt={`${name} cover`} />
             {name}
             <div>

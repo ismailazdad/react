@@ -1,5 +1,5 @@
 
-import logo from '../assets/logo.png'
+// import logo from '../assets/logo.png'
 import '../style/Banner.css'
 // import '../components/Recommendation'
 import Recommendation from "./Recommendation";

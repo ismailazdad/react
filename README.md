@@ -2,6 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## this repo is a small react project for training and use basic component of native react app
+
+[live demo](https://ismail-azdad.surge.sh/)
+
+ 
+
 ## Available Scripts
 
 In the project directory, you can run:

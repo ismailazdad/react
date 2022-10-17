@@ -34,3 +34,10 @@
 .lmj-cart-closed > button {
     color: black;
 }
+.imgtest{
+    width:20px;
+    height:20px;
+}
+.container{
+    display: flex;
+}

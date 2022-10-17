@@ -1,5 +1,7 @@
 import '../style/Cart.css'
 import {useEffect, useState} from 'react'
+import plus from "../assets/plus.jpg";
+import moins from "../assets/moins.png";
 
 function Cart({cart, updateCart}) {
     const [isOpen, setIsOpen] = useState(true)
@@ -11,7 +13,39 @@ function Cart({cart, updateCart}) {
 
     useEffect(() => {
         document.title = `LMJ: ${total}€ d'achats`
-    },[total])
+    }, [total])
+
+    function sortCart(myArray) {
+        return myArray.sort((a, b) =>
+            (a.name < b.name) ? -1 : (a.name > b.name) ? 1 : 0
+        )
+    }
+
+    function removeOneItem(name, price) {
+        const currentPlantSaved = cart.find((plant) => plant.name === name)
+        const cartFilteredCurrentPlant = cart.filter(
+            (plant) => plant.name !== name
+        )
+        let result
+        if (currentPlantSaved.amount > 1) {
+            result = [...cartFilteredCurrentPlant,
+                {name, price, amount: currentPlantSaved.amount - 1}]
+        } else {
+            result = [...cartFilteredCurrentPlant]
+        }
+        updateCart(sortCart(result))
+    }
+
+    function addOneItem(name, price) {
+        const currentPlantSaved = cart.find((plant) => plant.name === name)
+        const cartFilteredCurrentPlant = cart.filter(
+            (plant) => plant.name !== name
+        )
+        let result = [...cartFilteredCurrentPlant,
+            {name, price, amount: currentPlantSaved.amount + 1}]
+        updateCart(sortCart(result))
+    }
+
 
     return isOpen ? (
         <div className='lmj-cart'>
@@ -25,11 +59,16 @@ function Cart({cart, updateCart}) {
                 <div>
                     <h2>Panier</h2>
                     <ul>
-                        {cart.map(({name, price, amount}, index) => (
-                            <div key={`${name}-${index}`}>
-                                {name} {price}€ x {amount}
-                            </div>
-                        ))}
+                        {cart
+                            .map(({name, price, amount}, index) => (
+                                <div className='container' key={`${name}-${index}`}>
+                                    <img alt='' onClick={() => removeOneItem(name, price)} className='imgtest'
+                                         src={moins}/>
+                                    <div> {name} {price}€ x {amount}</div>
+                                    <img onClick={() => addOneItem(name, price)} alt='' className='imgtest' src={plus}/>
+                                </div>
+                            ))}
+
                     </ul>
                     <h3>Total :{total}€</h3>
                     <button onClick={() => updateCart([])}>Vider le panier</button>

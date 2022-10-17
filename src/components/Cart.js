@@ -61,9 +61,8 @@ function Cart({cart, updateCart}) {
                     <ul>
                         {cart
                             .map(({name, price, amount}, index) => (
-                                <div className='container' key={`${name}-${index}`}>
-                                    <img alt='' onClick={() => removeOneItem(name, price)} className='imgtest'
-                                         src={moins}/>
+                                <div className='lmj-container justify-content-between' key={`${name}-${index}`}>
+                                    <img alt='' onClick={() => removeOneItem(name, price)} className='imgtest' src={moins}/>
                                     <div> {name} {price}€ x {amount}</div>
                                     <img onClick={() => addOneItem(name, price)} alt='' className='imgtest' src={plus}/>
                                 </div>

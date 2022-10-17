@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    width: 200px;
+    width: 35vh;
 }
 
 .lmj-cart-add-button {
@@ -38,6 +38,7 @@
     width:20px;
     height:20px;
 }
-.container{
+.lmj-container{
     display: flex;
+    min-width: 28vh;
 }

@@ -15,3 +15,9 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 // reportWebVitals();
+//deploiement
+//lancer la commande npm run build
+//prompt sur le repertoire build
+//lancer surge
+//definisser le nom de domaine et voila
+

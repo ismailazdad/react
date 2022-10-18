@@ -20,4 +20,5 @@ root.render(
 //prompt sur le repertoire build
 //lancer surge
 //definisser le nom de domaine et voila
+//https://javascript.plainenglish.io/deploy-a-react-app-using-surge-1061a626794c
 

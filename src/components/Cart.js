@@ -70,7 +70,7 @@ function Cart({cart, updateCart}) {
 
                     </ul>
                     <h3>Total :{total}€</h3>
-                    <button onClick={() => updateCart([])}>Close basket</button>
+                    <button onClick={() => updateCart([])}>Clear the basket</button>
                 </div>
             ) : (
                 <div>Basket is empty</div>

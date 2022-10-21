@@ -21,13 +21,17 @@ function PlantItem({cover, name, water, light, price, category, details}) {
                 <span className='lmj-plant-item-price'>{price}€</span>
                 <img className='lmj-plant-item-cover' src={cover} alt={`${name} cover`}/>
                 {name}
-                <div>
-                    <CareScale careType='water' scaleValue={water}/>
-                    <CareScale careType='light' scaleValue={light}/>
+                <div className="row col-md-12">
+                    <div className="col-md-10">
+                            <CareScale careType='water' scaleValue={water}/>
+                            <CareScale careType='light' scaleValue={light}/>
+                    </div>
+                    <div className="col-md-2" >
+                        <Button variant="secondary" onClick={handleShow} title='detail'>
+                            <FaSearchengin />
+                        </Button>
+                    </div>
                 </div>
-                <Button variant="secondary" onClick={handleShow} title='detail'>
-                    <FaSearchengin />
-                </Button>
             </li>
 
             <Modal show={show}>

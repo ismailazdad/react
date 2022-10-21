@@ -2,6 +2,7 @@ import {plantList} from '../datas/plantList'
 import {useState} from 'react'
 import PlantItem from "./PlantItem";
 import Categories from "./Categories";
+import { MdOutlineAdd} from 'react-icons/md';
 import '../style/Shoppinglist.css'
 
 function ShoppingList({cart, updateCart}) {
@@ -55,7 +56,7 @@ function ShoppingList({cart, updateCart}) {
                                 category={category}
                                 details={details}
                             />
-                            <button onClick={() => addToCart(name, price)}>Ajouter</button>
+                            <button title="add article" onClick={() => addToCart(name, price)}><MdOutlineAdd /></button>
                         </div>) : null
                 )}
             </ul>

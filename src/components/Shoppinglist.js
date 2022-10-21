@@ -2,7 +2,7 @@ import {plantList} from '../datas/plantList'
 import {useState} from 'react'
 import PlantItem from "./PlantItem";
 import Categories from "./Categories";
-import { MdOutlineAdd} from 'react-icons/md';
+import {MdOutlineAdd} from 'react-icons/md';
 import '../style/Shoppinglist.css'
 
 function ShoppingList({cart, updateCart}) {
@@ -44,7 +44,7 @@ function ShoppingList({cart, updateCart}) {
                 activeCategory={activeCategory}
             />
             <ul className='lmj-plant-list'>
-                {plantList.map(({id, cover, name, water, light, price, category,details}) =>
+                {plantList.map(({id, cover, name, water, light, price, category, details}) =>
                     !activeCategory || activeCategory === category ? (
                         <div key={id}>
                             <PlantItem
@@ -56,7 +56,7 @@ function ShoppingList({cart, updateCart}) {
                                 category={category}
                                 details={details}
                             />
-                            <button title="add article" onClick={() => addToCart(name, price)}><MdOutlineAdd /></button>
+                            <button className="lmj-shopping-list-add" title="add article" onClick={() => addToCart(name, price)}><MdOutlineAdd/></button>
                         </div>) : null
                 )}
             </ul>
